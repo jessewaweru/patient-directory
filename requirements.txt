@@ -1,0 +1,12 @@
+django
+djangorestframework
+django_extensions
+djangorestframework-simplejwt
+requests
+django-cors-headers
+python-decouple
+drf-yasg
+pytest-django
+django-otp 
+pyotp
+psycopg2-binary
