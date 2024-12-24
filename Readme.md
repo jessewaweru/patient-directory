@@ -14,6 +14,48 @@ Before setting up the project, ensure you have the following installed:
 - `pip` (Python package installer)
 - `virtualenv` (for creating isolated environments)
 
+## Setup Steps
+1. Clone the repository
+
+``` bash
+git clone https://github.com/yourusername/patient-directory.git
+cd patient-directory
+
+```
+2. Set up a virtual environment
+``` bash
+python3 -m venv venv
+source venv/bin/activate
+
+```
+3. Install the dependencies as referenced below using a requirements text file.
+```bash
+pip install -r requirements.txt
+
+```
+4. Set up a Postgres database
+- Ensure the psycopg2 library is installed from the dependencies list.
+- Then proceed to set up the database settings as follows,
+
+```python
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'your_database_name',
+        'USER': 'your_username',
+        'PASSWORD': 'your_password',
+        'HOST': 'localhost',  # Use the actual host if it's remote
+        'PORT': '5432',       # Default PostgreSQL port
+    }
+}
+
+```
+5. Run the development server
+```bash
+python manage.py runserver
+
+```
+
 ## Dependencies
 This project relies on the following major dependencies:
 
@@ -49,7 +91,7 @@ Some of the api endpoints derived from the project include the following:
 - POST /api/lsuccess/: A page comfirming the successfull login of a user after they have been redirected.
 
 ## Features
-- User Authentication: Secure login and registration with JWT tokens.
+- User Authentication: Secure login and registration with token authentication.
 - Patient Profile Management: Users can create, view, and update their profiles.
 - Django Admin Interface: For managing patient data and users.
 - REST API: Endpoints for patient registration, login, and profile management.
